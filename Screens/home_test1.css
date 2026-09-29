@@ -1,0 +1,245 @@
+:root {
+  --page-bg: #b91c1c; /* Entire page background */
+  --surface: #fffaf2; /* Main panel and card background */
+  --text-dark: #292524; /* Text on light panels */
+  --text-light: #ffffff; /* Text on red background */
+  --muted: #665f58; /* Secondary text */
+  --accent: #7f1d1d; /* Buttons and link accents */
+  --accent-hover: #5f1515;
+  --border: #eadfd3;
+  --corner-radius: 16px;
+}
+
+/* Basic reset: removes the browser's default white edge. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--page-bg);
+  color: var(--text-light);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 22px max(24px, calc((100% - 1000px) / 2));
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+  color: var(--text-light);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.header-tagline {
+  font-size: 0.9rem;
+}
+
+/* Keep the content centered without limiting the page background. */
+.page-container {
+  width: min(100% - 40px, 1000px);
+  margin: 0 auto;
+}
+
+/* Welcome section */
+.welcome-section {
+  padding: 64px 0 40px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.welcome-section h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 6vw, 4rem);
+  line-height: 1.1;
+}
+
+.welcome-description {
+  max-width: 600px;
+  margin: 18px auto 0;
+  font-size: 1.1rem;
+}
+
+/* Reusable light panel */
+.panel {
+  padding: 32px;
+  border-radius: var(--corner-radius);
+  background-color: var(--surface);
+  color: var(--text-dark);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.section-heading h2,
+.next-section h2 {
+  margin: 0 0 8px;
+  font-size: 1.7rem;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Ingredient input */
+.ingredient-form {
+  margin-top: 26px;
+}
+
+.ingredient-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.input-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background-color: #fff;
+  color: var(--text-dark);
+}
+
+/* Test Animation when hover over button */
+.input-row input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #f7b955;
+  outline-offset: 3px;
+}
+
+.primary-button {
+  padding: 13px 24px;
+  border: 0;
+  border-radius: 9px;
+  background-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Ingredient list placeholder */
+.ingredient-preview {
+  margin-top: 28px;
+}
+
+.ingredient-preview h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.empty-state {
+  padding: 22px;
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty-state p {
+  margin: 0;
+}
+
+/* Navigation to chat and recipe screens */
+.next-section {
+  padding: 42px 0 56px;
+  text-align: center;
+}
+
+.next-section h2 {
+  margin-bottom: 20px;
+}
+
+.navigation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.navigation-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 26px;
+  border-radius: var(--corner-radius);
+  background-color: var(--surface);
+  color: var(--text-dark);
+  text-align: left;
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.navigation-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 2rem;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.card-description {
+  color: var(--muted);
+}
+
+.card-action {
+  margin-top: auto;
+  padding-top: 10px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Footer */
+.site-footer {
+  padding: 0 20px 22px;
+  text-align: center;
+  font-size: 0.85rem;
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI CHEF | Home</title>
+    <link rel="stylesheet" href="home_test1.css" />
+  </head>
+  <body>
+    <!-- Top of the page -->
+    <header class="site-header">
+      <a class="logo" href="home_test1.html">Chef It Up</a>
+      <span class="header-tagline">Your own cooking assistant</span>
+    </header>
+
+    <main class="page-container">
+      <!-- Welcome message -->
+      <section class="welcome-section">
+        <p class="eyebrow">WELCOME TO YOUR KITCHEN</p>
+        <h1>Let's get cooking!</h1>
+        <p class="welcome-description">
+          Add what you have in your kitchen, then chat with your AI Chef or
+          check out your current recipe.
+        </p>
+      </section>
+
+      <!-- Ingredient entry: layout only, no JavaScript yet -->
+      <section class="panel ingredients-section">
+        <div class="section-heading">
+          <div>
+            <h2 id="ingredients-title">What's in your kitchen?</h2>
+            <p>Start by entering the ingredients you have available.</p>
+          </div>
+        </div>
+
+        <form class="ingredient-form">
+          <label for="ingredient-input">Add an ingredient</label>
+          <div class="input-row">
+            <input
+              id="ingredient-input"
+              name="ingredient"
+              type="text"
+              placeholder="e.g. Eggs, rice, chicken..."
+              autocomplete="off"
+            />
+            <!-- This is a visual placeholder until JavaScript is added. -->
+            <button class="primary-button" type="button">+ Add</button>
+          </div>
+        </form>
+
+        <div class="ingredient-preview">
+          <h3>Your ingredients</h3>
+          <div class="empty-state">
+            <p>Your added ingredients will appear here.</p>
+          </div>
+          <!-- Later, JavaScript can create ingredient tags in this area. -->
+        </div>
+      </section>
+
+      <!-- Links to the other two screens -->
+      <section class="next-section">
+        <h2 id="next-title">What would you like to do?</h2>
+        <div class="navigation-grid">
+          <a class="navigation-card" href="chat.html">
+            <span class="card-icon">💬</span>
+            <span class="card-title">Talk to Chef</span>
+            <span class="card-description"
+              >Ask questions and get help deciding what to cook.</span
+            >
+            <span class="card-action">Open assistant &rarr;</span>
+          </a>
+
+          <a class="navigation-card" href="recipe.html">
+            <span class="card-icon">📖</span>
+            <span class="card-title">View Current Recipes</span>
+            <span class="card-description"
+              >See your selected meal and its cooking instructions.</span
+            >
+            <span class="card-action">View recipe &rarr;</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>CHEF IT UP &bull; Made for your kitchen</p>
+    </footer>
+  </body>
+</html>
