@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI CHEF | Talk to Chef</title>
+    <link rel="stylesheet" href="home_test1.css" />
+    <link rel="stylesheet" href="chat_test.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="home_test1.html">Chef It Up</a>
+      <span class="header-tagline">Your own cooking assistant</span>
+    </header>
+
+    <main class="page-container">
+      <section class="welcome-section chatHeader">
+        <p class="eyebrow">YOUR KITCHEN COMPANION</p>
+        <h1>Ready to talk with Chef?</h1>
+        <p class="welcome-description">
+          Share what you're craving, ask a cooking question, or find a recipe
+          using what's in your kitchen.
+        </p>
+      </section>
+
+      <section class="panel chat-panel" aria-labelledby="chat-title">
+        <div class="section-heading chat-heading">
+          <div>
+            <h2 id="chat-title">Talk to Chef</h2>
+            <p>A little inspiration for your next meal.</p>
+          </div>
+          <a class="back-link" href="home_test1.html">&larr; Back to kitchen</a>
+        </div>
+
+        <div class="chat-messages" aria-label="Conversation preview">
+          <article class="chef-message">
+            <p class="message-author">Chef</p>
+            <p>
+              Hi there! What would you like to cook today? Tell me what your
+              craving, and let's come up with something delicious.
+            </p>
+          </article>
+        </div>
+
+        <div class="prompt_ai">
+          <button class="suggestion-button" type="button">
+            Prompt Chef to make recipes
+          </button>
+          <span class="preview-note"
+            >Static preview &bull; Chat is coming soon</span
+          >
+        </div>
+
+        <div class="chat-composer">
+          <label for="message-input">Your message</label>
+          <div class="composer-row">
+            <textarea
+              id="message-input"
+              name="message"
+              rows="2"
+              placeholder="e.g. What can I make with eggs and rice?"
+            ></textarea>
+            <button class="primary-button" type="button" disabled>
+              Send &rarr;
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>CHEF IT UP &bull; Made for your kitchen</p>
+    </footer>
+  </body>
+</html>
