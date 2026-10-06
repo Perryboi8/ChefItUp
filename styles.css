@@ -39,13 +39,23 @@ nav {
     display: flex;
     gap: 30px;
 }
-nav a{
+nav a,
+.team_member a{
     color: var(--text-color);
     text-decoration: none;
+    display: inline-block;
+    transition: .2s ease;
 }
 
-nav a:hover {
+nav a:hover,
+.team_member a:hover {
     color: var(--button-color);
+    transform: translateY(-2px);
+}
+
+nav a.active {
+    color: var(--button-color);
+    font-weight: bold;
 }
 
 main {
@@ -63,6 +73,20 @@ main {
     width: 100%;
     max-width: 800px;
     padding: 40px 20px;
+}
+
+.favorites_section,
+.about_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding:60px 20px 30px;   
+
+}
+
+.about_section {
+    max-width: 700px;
 }
 
 form { 
@@ -85,7 +109,8 @@ form {
     box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.15);
 }
 
-.custom_button{
+.custom_button,
+.view_recipe_button{
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
     border:none;
@@ -93,12 +118,11 @@ form {
     color: var(--secondary-color);
     cursor: pointer;
     text-align: center;
-    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.15);
-
 }
 .recipes {
     display: flex;
     gap: 20px;
+    padding-bottom: 60px;
 }
 
 .recipe_card {
@@ -124,6 +148,54 @@ form {
     flex: 1;
 }
 
+.recipe_header,
+.favorites_header {
+    padding: 20px;
+}
+
 .view_recipe_button {
     margin-top: auto;
+
+}
+
+.custom_button:hover,
+.view_recipe_button:hover {
+    color: var(--text-color);
+}
+
+.recipe_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.favorite_status {
+    color: var(--button-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.team_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    background-color: var(--secondary-color);
+    border-radius: 6px;
+    box-shadow: var(--card-shadow);
+}
+
+.team_section h2 {
+    color: var(--button-color);
+    
+}
+.team_members {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 20px 0 30px
+}
+
+.team_member {
+    text-align: center;
 }
