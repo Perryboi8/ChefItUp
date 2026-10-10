@@ -3,15 +3,14 @@ Web Application to help users figure out what they are able to cook based on the
 
 ## Combined screens
 
-Open `index.html` in a browser. This prototype uses HTML and CSS only, with
-Edwin_Test's cream, off-white, and terracotta palette and recipe photos.
-Ryan_Test contributes the ingredient panel and conversation layout.
+Open `index.html` in your browser. This prototype uses HTML and CSS only.
 
-The sticky navigation smoothly scrolls between Kitchen, Talk to Chef, Favorites,
-and About sections on one continuous page. The layout adapts to the viewport;
-smaller screens and expanded recipe details scroll naturally without clipping.
-Recipe instructions expand with native HTML details elements.
+- `index.html`: Kitchen, sample recipes, and About / team information.
+- `chat.html`: Talk to Chef conversation preview.
+- `favorites.html`: Favorites screen with sample recipes.
+- `styles.css`: Shared responsive styling and Edwin_Test's original colors.
 
-Ingredients, chat, and favorites are visual previews. There is no JavaScript,
-recipe filtering, browser storage, or AI connection. Old page URLs forward to
-the corresponding section of the single page using HTML redirects.
+Each page repeats the same small header and navigation. Navigation opens the
+corresponding HTML file; no server, imports, build tools, or JavaScript are needed.
+Recipe instructions expand with native HTML details elements. Ingredient entry,
+chat, and saving favorites remain visual previews.

@@ -1,2 +1,122 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=index.html#favorites"><title>Favorites · Chef it up!</title><link rel="stylesheet" href="styles.css"></head><body><main class="screen"><h1>Favorites</h1><a class="button" href="index.html#favorites">Open Favorites</a></main></body></html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Favorites · Chef it up!</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <a class="brand" href="index.html">Chef <span>it up!</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Kitchen</a>
+        <a href="chat.html">Talk to Chef</a>
+        <a href="favorites.html" aria-current="page">Favorites</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section id="favorites" class="screen" aria-labelledby="favorites-title">
+        <div class="welcome">
+          <p class="eyebrow">YOUR PERSONAL COOKBOOK</p>
+          <h1 id="favorites-title" class="screen-title">Worth making again.</h1>
+          <p>
+            A preview of your favorite meals. Saving recipes will be added
+            later.
+          </p>
+        </div>
+        <div class="recipes">
+          <article class="recipe-card">
+            <img src="assets/chicken-taco-5-of-5.jpg" alt="Chicken Tacos" />
+            <div class="recipe-info">
+              <p class="meta">25 MIN · EASY</p>
+              <h3>Chicken Tacos</h3>
+              <p>
+                Juicy chicken, warm tortillas, and your favorite fresh toppings.
+              </p>
+              <details>
+                <summary>View recipe</summary>
+                <h4>Ingredients</h4>
+                <p>chicken, tortillas, tomatoes, onion, lime</p>
+                <ol>
+                  <li>
+                    Dice the chicken and season with salt, pepper, and taco
+                    seasoning.
+                  </li>
+                  <li>
+                    Cook chicken in a lightly oiled skillet until it reaches
+                    165°F (74°C).
+                  </li>
+                  <li>
+                    Warm the tortillas, fill with chicken, and top with chopped
+                    tomatoes, onion, and lime.
+                  </li>
+                </ol>
+              </details>
+            </div>
+          </article>
+          <article class="recipe-card">
+            <img src="assets/Classic-Chicken-Salad-4.jpg" alt="Chicken Salad" />
+            <div class="recipe-info">
+              <p class="meta">30 MIN · EASY</p>
+              <h3>Chicken Salad</h3>
+              <p>A fresh, satisfying salad for an easy lunch at home.</p>
+              <details>
+                <summary>View recipe</summary>
+                <h4>Ingredients</h4>
+                <p>chicken, lettuce, tomatoes, cucumber, olive oil</p>
+                <ol>
+                  <li>
+                    Season the chicken and cook in a skillet until it reaches
+                    165°F (74°C). Let rest, then slice.
+                  </li>
+                  <li>Wash and chop the lettuce, tomatoes, and cucumber.</li>
+                  <li>
+                    Toss vegetables with olive oil and your favorite dressing.
+                    Top with chicken.
+                  </li>
+                </ol>
+              </details>
+            </div>
+          </article>
+          <article class="recipe-card">
+            <img
+              src="assets/One-Pot-Chicken-Alfredo-2.webp"
+              alt="Chicken Alfredo Pasta"
+            />
+            <div class="recipe-info">
+              <p class="meta">45 MIN · EASY</p>
+              <h3>Chicken Alfredo Pasta</h3>
+              <p>Creamy Alfredo sauce, tender chicken, and comforting pasta.</p>
+              <details>
+                <summary>View recipe</summary>
+                <h4>Ingredients</h4>
+                <p>chicken, pasta, cream, parmesan, garlic, butter</p>
+                <ol>
+                  <li>
+                    Cook pasta according to package instructions, reserving some
+                    pasta water.
+                  </li>
+                  <li>
+                    Season chicken and cook until it reaches 165°F (74°C), then
+                    slice.
+                  </li>
+                  <li>
+                    Melt butter in a pan, add minced garlic, then cream. Simmer
+                    gently and stir in Parmesan.
+                  </li>
+                  <li>
+                    Toss with pasta and chicken. Add a splash of pasta water to
+                    loosen the sauce.
+                  </li>
+                </ol>
+              </details>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>CHEF IT UP · A little inspiration. A delicious meal.</footer>
+  </body>
+</html>

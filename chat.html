@@ -1,2 +1,66 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=index.html#chef"><title>Talk to Chef · Chef it up!</title><link rel="stylesheet" href="styles.css"></head><body><main class="screen"><h1>Talk to Chef</h1><a class="button" href="index.html#chef">Open Talk to Chef</a></main></body></html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Talk to Chef · Chef it up!</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <a class="brand" href="index.html">Chef <span>it up!</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Kitchen</a>
+        <a href="chat.html" aria-current="page">Talk to Chef</a>
+        <a href="favorites.html">Favorites</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section id="chef" class="screen" aria-labelledby="chef-title">
+        <div class="welcome">
+          <p class="eyebrow">YOUR KITCHEN COMPANION</p>
+          <h1 id="chef-title" class="screen-title">
+            A little inspiration from Chef.
+          </h1>
+          <p>Ideas for your next meal, all in one place.</p>
+        </div>
+        <div class="panel chat-panel">
+          <div class="section-heading">
+            <h3>Talk to Chef</h3>
+            <span class="badge">Screen preview</span>
+          </div>
+          <article class="message">
+            <strong>Chef</strong>
+            <p>
+              Welcome! What are you craving today? Start with your ingredients,
+              or browse a few meal ideas below.
+            </p>
+          </article>
+          <article class="message user">
+            <strong>You</strong>
+            <p>I have chicken. What could I make?</p>
+          </article>
+          <article class="message">
+            <strong>Chef</strong>
+            <p>
+              How about chicken tacos, a fresh chicken salad, or creamy Alfredo
+              pasta?
+            </p>
+            <a class="action" href="index.html">Explore the sample recipes →</a>
+          </article>
+          <label for="message">Your message</label>
+          <div class="input-row">
+            <input
+              id="message"
+              placeholder="Chat is coming soon"
+              disabled
+            /><button disabled>Send →</button>
+          </div>
+          <p class="hint">Conversation preview only.</p>
+        </div>
+      </section>
+    </main>
+    <footer>CHEF IT UP · A little inspiration. A delicious meal.</footer>
+  </body>
+</html>
