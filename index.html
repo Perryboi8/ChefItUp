@@ -1,6 +1,84 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Your kitchen · Chef it up!</title><link rel="stylesheet" href="styles.css"><script src="app.js" defer></script></head>
-<body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="index.html">Chef <span>it up!</span></a><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Kitchen</a><a href="chat.html">Talk to Chef</a><a href="favorites.html">Favorites</a><a href="about.html">About</a></nav></header><main id="main"><section class="welcome"><p class="eyebrow">WELCOME TO YOUR KITCHEN</p><h1>Good meals start<br>with what you have.</h1><p>Turn the ingredients in your kitchen into your next favorite meal.</p></section>
-<div class="kitchen-grid"><section class="panel"><p class="eyebrow">01 / STOCK YOUR KITCHEN</p><h2>What's in your kitchen?</h2><p>Add a few ingredients. We'll help with the inspiration.</p><form id="ingredient-form"><label for="ingredient">Add ingredients, separated by commas</label><div class="input-row"><input id="ingredient" placeholder="e.g. chicken, rice, tomatoes" maxlength="200" required><button type="submit">+ Add</button></div></form><div id="ingredients" class="chips" aria-live="polite"></div><button class="secondary" id="clear-ingredients" type="button">Clear ingredients</button></section>
-<a class="panel assistant-card" href="chat.html"><span class="chef-icon" aria-hidden="true">✦</span><p class="eyebrow">02 / FIND YOUR INSPIRATION</p><h2>A little help from Chef.</h2><p>Explore meal ideas and get cooking inspiration using your ingredients.</p><span class="action">Let's talk cooking →</span></a></div>
-<section class="recipe-section"><div class="section-heading"><div><p class="eyebrow">FROM YOUR KITCHEN TO YOUR TABLE</p><h2>Something delicious awaits.</h2></div><p id="recipe-count" aria-live="polite"></p></div><p class="hint">Add ingredients above to find recipes that use at least one of them.</p><div id="recipes" class="recipes"></div></section></main><footer>CHEF IT UP <span>•</span> A little inspiration. A delicious meal.</footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chef it up! · Your kitchen</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#kitchen">Skip to content</a>
+<header>
+  <a class="brand" href="#kitchen">Chef <span>it up!</span></a>
+  <nav aria-label="Main navigation">
+    <a href="#kitchen">Kitchen</a>
+    <a href="#chef">Talk to Chef</a>
+    <a href="#favorites">Favorites</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+<main>
+  <section id="kitchen" class="screen" aria-labelledby="kitchen-title">
+    <div class="welcome"><p class="eyebrow">WELCOME TO YOUR KITCHEN</p>
+    <h1 id="kitchen-title">Good meals start with what you have.</h1>
+    <p>Turn the ingredients in your kitchen into your next favorite meal.</p></div>
+    <div class="kitchen-grid">
+      <div class="panel"><p class="eyebrow">01 / STOCK YOUR KITCHEN</p><h2>What's in your kitchen?</h2>
+      <label for="ingredients">Your ingredient list</label>
+      <textarea id="ingredients" rows="2" placeholder="e.g. chicken, rice, tomatoes"></textarea>
+      <p class="hint">Layout preview — ingredient search will be added later.</p></div>
+      <a class="panel assistant-card" href="#chef"><p class="eyebrow">02 / FIND YOUR INSPIRATION</p>
+      <h2>A little help from Chef.</h2><p>Get inspired for your next meal.</p><span class="action">Meet your cooking companion ↓</span></a>
+    </div>
+    <div class="section-heading"><h2>Something delicious awaits.</h2><p>3 sample recipes</p></div>
+    <div class="recipes"><article class="recipe-card">
+  <img src="assets/chicken-taco-5-of-5.jpg" alt="Chicken Tacos">
+  <div class="recipe-info"><p class="meta">25 MIN · EASY</p><h3>Chicken Tacos</h3><p>Juicy chicken, warm tortillas, and your favorite fresh toppings.</p>
+  <details><summary>View recipe</summary><h4>Ingredients</h4><p>chicken, tortillas, tomatoes, onion, lime</p><ol><li>Dice the chicken and season with salt, pepper, and taco seasoning.</li><li>Cook chicken in a lightly oiled skillet until it reaches 165°F (74°C).</li><li>Warm the tortillas, fill with chicken, and top with chopped tomatoes, onion, and lime.</li></ol></details></div>
+</article>
+<article class="recipe-card">
+  <img src="assets/Classic-Chicken-Salad-4.jpg" alt="Chicken Salad">
+  <div class="recipe-info"><p class="meta">30 MIN · EASY</p><h3>Chicken Salad</h3><p>A fresh, satisfying salad for an easy lunch at home.</p>
+  <details><summary>View recipe</summary><h4>Ingredients</h4><p>chicken, lettuce, tomatoes, cucumber, olive oil</p><ol><li>Season the chicken and cook in a skillet until it reaches 165°F (74°C). Let rest, then slice.</li><li>Wash and chop the lettuce, tomatoes, and cucumber.</li><li>Toss vegetables with olive oil and your favorite dressing. Top with chicken.</li></ol></details></div>
+</article>
+<article class="recipe-card">
+  <img src="assets/One-Pot-Chicken-Alfredo-2.webp" alt="Chicken Alfredo Pasta">
+  <div class="recipe-info"><p class="meta">45 MIN · EASY</p><h3>Chicken Alfredo Pasta</h3><p>Creamy Alfredo sauce, tender chicken, and comforting pasta.</p>
+  <details><summary>View recipe</summary><h4>Ingredients</h4><p>chicken, pasta, cream, parmesan, garlic, butter</p><ol><li>Cook pasta according to package instructions, reserving some pasta water.</li><li>Season chicken and cook until it reaches 165°F (74°C), then slice.</li><li>Melt butter in a pan, add minced garlic, then cream. Simmer gently and stir in Parmesan.</li><li>Toss with pasta and chicken. Add a splash of pasta water to loosen the sauce.</li></ol></details></div>
+</article></div>
+  </section>
+  <section id="chef" class="screen" aria-labelledby="chef-title">
+    <div class="welcome"><p class="eyebrow">YOUR KITCHEN COMPANION</p><h2 id="chef-title" class="screen-title">A little inspiration from Chef.</h2><p>Ideas for your next meal, all in one place.</p></div>
+    <div class="panel chat-panel"><div class="section-heading"><h3>Talk to Chef</h3><span class="badge">Screen preview</span></div>
+    <article class="message"><strong>Chef</strong><p>Welcome! What are you craving today? Start with your ingredients, or browse a few meal ideas below.</p></article>
+    <article class="message user"><strong>You</strong><p>I have chicken. What could I make?</p></article>
+    <article class="message"><strong>Chef</strong><p>How about chicken tacos, a fresh chicken salad, or creamy Alfredo pasta?</p><a class="action" href="#kitchen">Explore the sample recipes ↑</a></article>
+    <label for="message">Your message</label><div class="input-row"><input id="message" placeholder="Chat is coming soon" disabled><button disabled>Send →</button></div>
+    <p class="hint">Conversation preview only.</p></div>
+  </section>
+  <section id="favorites" class="screen" aria-labelledby="favorites-title">
+    <div class="welcome"><p class="eyebrow">YOUR PERSONAL COOKBOOK</p><h2 id="favorites-title" class="screen-title">Worth making again.</h2><p>A preview of your favorite meals. Saving recipes will be added later.</p></div>
+    <div class="recipes"><article class="recipe-card">
+  <img src="assets/chicken-taco-5-of-5.jpg" alt="Chicken Tacos">
+  <div class="recipe-info"><p class="meta">25 MIN · EASY</p><h3>Chicken Tacos</h3><p>Juicy chicken, warm tortillas, and your favorite fresh toppings.</p>
+  <details><summary>View recipe</summary><h4>Ingredients</h4><p>chicken, tortillas, tomatoes, onion, lime</p><ol><li>Dice the chicken and season with salt, pepper, and taco seasoning.</li><li>Cook chicken in a lightly oiled skillet until it reaches 165°F (74°C).</li><li>Warm the tortillas, fill with chicken, and top with chopped tomatoes, onion, and lime.</li></ol></details></div>
+</article>
+<article class="recipe-card">
+  <img src="assets/Classic-Chicken-Salad-4.jpg" alt="Chicken Salad">
+  <div class="recipe-info"><p class="meta">30 MIN · EASY</p><h3>Chicken Salad</h3><p>A fresh, satisfying salad for an easy lunch at home.</p>
+  <details><summary>View recipe</summary><h4>Ingredients</h4><p>chicken, lettuce, tomatoes, cucumber, olive oil</p><ol><li>Season the chicken and cook in a skillet until it reaches 165°F (74°C). Let rest, then slice.</li><li>Wash and chop the lettuce, tomatoes, and cucumber.</li><li>Toss vegetables with olive oil and your favorite dressing. Top with chicken.</li></ol></details></div>
+</article>
+<article class="recipe-card">
+  <img src="assets/One-Pot-Chicken-Alfredo-2.webp" alt="Chicken Alfredo Pasta">
+  <div class="recipe-info"><p class="meta">45 MIN · EASY</p><h3>Chicken Alfredo Pasta</h3><p>Creamy Alfredo sauce, tender chicken, and comforting pasta.</p>
+  <details><summary>View recipe</summary><h4>Ingredients</h4><p>chicken, pasta, cream, parmesan, garlic, butter</p><ol><li>Cook pasta according to package instructions, reserving some pasta water.</li><li>Season chicken and cook until it reaches 165°F (74°C), then slice.</li><li>Melt butter in a pan, add minced garlic, then cream. Simmer gently and stir in Parmesan.</li><li>Toss with pasta and chicken. Add a splash of pasta water to loosen the sauce.</li></ol></details></div>
+</article></div>
+  </section>
+  <section id="about" class="screen" aria-labelledby="about-title">
+    <div class="welcome"><p class="eyebrow">LESS GUESSWORK. MORE GOOD FOOD.</p><h2 id="about-title" class="screen-title">Your kitchen, full of possibilities.</h2><p>Chef it up helps you decide what to cook with the ingredients you already have. Explore meal ideas and find inspiration for your next cooking adventure.</p></div>
+    <div class="panel about-panel"><p class="eyebrow">THE PEOPLE BEHIND THE APRON</p><h3>Meet the team.</h3><div class="team"><div><h4>Edwin Segovia</h4><p>Co-creator</p><a href="https://github.com/EdSego">Edwin on GitHub ↗</a></div><div><h4>Ryan Perry</h4><p>Co-creator</p><a href="https://github.com/Perryboi8">Ryan on GitHub ↗</a></div></div></div>
+    <footer>CHEF IT UP · A little inspiration. A delicious meal.</footer>
+  </section>
+</main>
+</body>
+</html>

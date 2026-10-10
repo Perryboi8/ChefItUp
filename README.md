@@ -3,22 +3,15 @@ Web Application to help users figure out what they are able to cook based on the
 
 ## Combined screens
 
-The combined interface uses Edwin_Test's original cream (`#fae3c6`), off-white
-(`#fff9f2`), terracotta (`#C65D32`), recipe photos, Favorites, and About pages.
-Ryan_Test contributes the ingredient-entry workflow, welcome layout, assistant
-entry point, and chat screen structure.
+Open `index.html` in a browser. This prototype uses HTML and CSS only, with
+Edwin_Test's cream, off-white, and terracotta palette and recipe photos.
+Ryan_Test contributes the ingredient panel and conversation layout.
 
-Open `index.html` in a browser, or run `python -m http.server 8000` from this
-folder and visit `http://localhost:8000`. No build or dependencies are required.
+The sticky navigation smoothly scrolls between Kitchen, Talk to Chef, Favorites,
+and About sections on one continuous page. The layout adapts to the viewport;
+smaller screens and expanded recipe details scroll naturally without clipping.
+Recipe instructions expand with native HTML details elements.
 
-- Add comma-separated ingredients to filter the three sample recipes by at least
-  one matching ingredient; remove chips or clear the list to browse everything.
-- Open recipe instructions and save or remove favorites with the heart buttons.
-- Ingredients and favorites persist in browser local storage when available.
-- Talk to Chef is an explicitly labeled local demo using the sample recipes;
-  it does not connect to an AI service.
-- All four pages share the responsive stylesheet and keyboard focus styles.
-
-Validation: JavaScript syntax, local page/asset references, and interaction smoke
-checks for ingredient deduplication, filtering, favorites, empty states, and demo
-chat. A real browser visual review is still needed.
+Ingredients, chat, and favorites are visual previews. There is no JavaScript,
+recipe filtering, browser storage, or AI connection. Old page URLs forward to
+the corresponding section of the single page using HTML redirects.
