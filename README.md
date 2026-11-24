@@ -1,33 +1,104 @@
-# ChefItUp
+# Chef it up!
 
-Web Application to help users figure out what they are able to cook based on their ingredients they currently have in the fridge. You will be able to ask our AI Chef for ideas on what to cook and even specify what type of cuisine you are craving. The goal is to help users who have trouble finding recipes that they are able to cook now.
+Chef it up! is a recipe discovery web application designed to help users find meals based on ingredients they already have at home.
 
-## Milestone 1
+The goal is to simplify meal planning, reduce food waste, and help users discover recipes without having to search through multiple websites.
 
-Open `index.html` in your browser. This prototype uses HTML and CSS only.
+The original vision also includes an AI-powered cooking assistant called **Talk to Chef**, which would allow users to request personalized recipe recommendations, specify their preferred cuisine, and ask cooking-related questions. This feature is currently planned for future development.
 
-- `index.html`: Kitchen, sample recipes, and About / team information.
-- `chat.html`: Talk to Chef conversation preview.
-- `favorites.html`: Favorites screen with sample recipes.
-- `styles.css`: Shared responsive styling and Edwin_Test's original colors.
+## Milestone 1 — HTML & CSS Prototype
 
-Each page repeats the same small header and navigation. Navigation opens the
-corresponding HTML file; no server, imports, build tools, or JavaScript are needed.
-Recipe instructions expand with native HTML details elements. Ingredient entry,
-chat, and saving favorites remain visual previews.
+The first milestone focused on designing and building the application's user interface using HTML and CSS.
 
-## Milestone 2
+### Features
 
-React application featuring:
+- Home page with sample recipes and expandable recipe instructions.
+- Talk to Chef conversation preview.
+- Favorites page with sample recipes.
+- About section introducing the development team.
+- Responsive layout using CSS.
 
-- Recipe search by name and ingredients
-- Favorites management
-- localStorage persistence
-- Responsive layout
-- Talk to Chef (planned AI feature)
+The original prototype contains visual demonstrations only. Searching, AI chat, and saving favorites were not functional at this stage.
 
-## Running the React Application
+### Running Milestone 1
 
+Open `milestone-1-static/index.html` in a web browser.
+
+No server or additional dependencies are required.
+
+## Milestone 2 — React Application
+
+The second milestone focused on migrating the application to React and implementing interactive functionality.
+
+### Implemented Features
+
+- **Recipe Search:** Search recipes by name or ingredients.
+- **Recipe Cards:** Dynamically display recipes using reusable React components.
+- **Favorites Management:** Add and remove recipes from a personal favorites collection.
+- **Persistent Favorites:** Save favorites using browser `localStorage`, allowing them to remain available after refreshing.
+- **Navigation:** Switch between Home, Favorites, and Talk to Chef using React state.
+- **Responsive Design:** Adjust the interface for desktop, tablet, and mobile screens.
+- **Talk to Chef:** Placeholder page for a planned AI cooking assistant.
+
+### Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- React
+- Vite
+- Browser Local Storage
+- Git and GitHub
+
+### Running Milestone 2
+
+**Prerequisites:**
+
+- Node.js and npm installed.
+
+Navigate to the React application directory:
+
+```bash
 cd chef-it-up-react
+```
+
+Install dependencies:
+
+```bash
 npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
+```
+
+Open the local URL displayed in the terminal.
+
+### Testing and Building
+
+Run ESLint:
+
+```bash
+npm run lint
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## Future Improvements
+
+Potential enhancements include:
+
+- Integrating an AI-powered cooking assistant.
+- Providing complete cooking instructions for every recipe.
+- Supporting more recipes and additional filtering options.
+- Connecting the application to a recipe API or backend database.
+
+## Project Information
+
+Developed for **CPSC 349 — Front-End Engineering** at California State University, Fullerton.
