@@ -1,15 +1,34 @@
-function Header({ onPageChange }) {
+function Header({ currentPage, onPageChange }) {
   return (
     <header className="header">
-      <a className="brand" href="/">
+      <button
+        type="button"
+        className="brand"
+        onClick={() => onPageChange("home")}
+      >
         Chef <span>it up!</span>
-      </a>
+      </button>
       <nav className="nav">
-        <button type="button" onClick={() => onPageChange("home")}>
+        <button
+          type="button"
+          className={currentPage === "home" ? "active" : ""}
+          onClick={() => onPageChange("home")}
+        >
           Home
         </button>
-        <a href="#chat.html">Talk to Chef</a>
-        <button type="button" onClick={() => onPageChange("favorites")}>
+        <button
+          type="button"
+          className={currentPage === "chef" ? "active" : ""}
+          aria-pressed={currentPage === "chef"}
+          onClick={() => onPageChange("chef")}
+        >
+          Talk to Chef
+        </button>
+        <button
+          type="button"
+          className={currentPage === "favorites" ? "active" : ""}
+          onClick={() => onPageChange("favorites")}
+        >
           Favorites
         </button>
       </nav>

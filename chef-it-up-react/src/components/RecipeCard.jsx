@@ -3,11 +3,16 @@ function RecipeCard({ recipe, onToggleFavorite, isFavorite }) {
     <article className="recipe-card">
       <img src={recipe.image} alt={recipe.name} />
       <div className="recipe-info">
-        <button onClick={() => onToggleFavorite(recipe)}>
-          {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
-        </button>
         <h3>{recipe.name}</h3>
         <p>{recipe.description}</p>
+
+        <button
+          type="button"
+          className={isFavorite ? "favorite-btn saved" : "favorite-btn"}
+          onClick={() => onToggleFavorite(recipe)}
+        >
+          {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+        </button>
       </div>
     </article>
   );

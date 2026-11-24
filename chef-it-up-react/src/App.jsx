@@ -52,18 +52,32 @@ function App() {
   return (
     // Need to add the <> </> to let me group multiple elements
     <>
-      <Header onPageChange={setCurrentPage} />
+      <Header currentPage={currentPage} onPageChange={setCurrentPage} />
       <main>
         {currentPage === "home" ? (
           <>
-            <p>Find your next favorite recipe.</p>
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search recipes..."
-            />
-            <p>You searched for: {searchQuery}</p>
+            <section className="welcome">
+              <p className="eyebrow">YOUR KITCHEN STARTS HERE</p>
+              <h1>What's cooking today?</h1>
+              <p>
+                Find delicious recipes, explore ingredients, and save your
+                favorites.
+              </p>
+            </section>
+
+            <div className="search-container">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search recipes or ingredients..."
+                aria-label="Search recipes or ingredients"
+              />
+            </div>
+            <div className="section-heading">
+              <h2>Explore Recipes</h2>
+              <p>{filteredRecipes.length} recipes</p>
+            </div>
             <div className="recipes">
               {filteredRecipes.map((recipe) => (
                 <RecipeCard
@@ -77,11 +91,26 @@ function App() {
               ))}
             </div>
           </>
-        ) : (
+        ) : currentPage === "favorites" ? (
           <>
-            <h2>My Favorites</h2>
+            <section className="favorites-header">
+              <p className="eyebrow">YOUR PERSONAL COOKBOOK</p>
+              <h1>My Favorite Recipes</h1>
+              <p>All your favorite dishes, saved in one place.</p>
+            </section>
+            <div className="section-heading favorites-heading">
+              <h2>Saved Recipes</h2>
+              <p>{favorites.length} saved</p>
+            </div>
             {favorites.length === 0 ? (
-              <p>You haven't saved any recipes yet.</p>
+              <div className="empty-favorites">
+                <h2>No favorites yet!</h2>
+                <p>Start exploring recipes and save the dishes you love.</p>
+
+                <button type="button" onClick={() => setCurrentPage("home")}>
+                  Explore Recipes
+                </button>
+              </div>
             ) : (
               <div className="recipes">
                 {favorites.map((recipe) => (
@@ -95,6 +124,18 @@ function App() {
               </div>
             )}
           </>
+        ) : (
+          <section className="chef-placeholder">
+            <h1>Talk to Chef</h1>
+            <p>AI cooking assistant — planned future feature.</p>
+            <p>
+              Get personalized recipe recommendations, cooking tips, and meal
+              inspiration.
+            </p>
+            <button onClick={() => setCurrentPage("home")}>
+              Back to Recipes
+            </button>
+          </section>
         )}
       </main>
     </>

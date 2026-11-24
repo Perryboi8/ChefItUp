@@ -1,3 +1,16 @@
+/* ========================================
+   1. Main Layout
+======================================== */
+
+main {
+  width: min(1120px, calc(100% - 40px));
+  margin: auto;
+}
+
+/* ========================================
+   2. Header and Navigation
+======================================== */
+
 .header {
   position: sticky;
   top: 0;
@@ -11,57 +24,61 @@
   gap: 20px;
   border-bottom: 1px solid var(--line);
 }
+
 .brand {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 28px;
   font-weight: 800;
   white-space: nowrap;
+  cursor: pointer;
 }
+
 .brand span {
   color: var(--button-color);
   font-style: italic;
 }
+
 .nav {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
 }
-.nav a {
-  text-decoration: none;
+
+.nav button {
+  background: transparent;
+  color: var(--text-color);
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding: 6px 0;
+  font: inherit;
   font-size: 14px;
   font-weight: 600;
-  padding: 6px 0;
-  border-bottom: 2px solid transparent;
+  cursor: pointer;
 }
-.nav a:hover,
-.nav a:focus-visible {
+
+.nav button:hover,
+.nav button:focus-visible,
+.nav button.active {
   color: var(--button-color);
   border-bottom-color: currentColor;
 }
-.nav a[aria-current="page"] {
-  color: var(--button-color);
-  border-bottom-color: currentColor;
-}
-main {
-  width: min(1120px, calc(100% - 40px));
-  margin: auto;
-}
-.screen {
-  min-height: calc(100svh - var(--header-height));
-  padding: clamp(18px, 3vh, 36px) 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: clamp(16px, 2vh, 28px);
-}
-.screen + .screen {
-  border-top: 1px solid var(--line);
-}
+
+/* ========================================
+   3. Home Page
+======================================== */
+
 .welcome {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto;
+  margin: 48px auto 28px;
 }
+
 .eyebrow {
   font-size: 11px;
   letter-spacing: 2px;
@@ -74,42 +91,13 @@ main {
   max-width: 600px;
   margin: 0 auto;
 }
-.kitchen-grid {
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: 20px;
+
+.search-container {
+  max-width: 600px;
+  margin: 0 auto 36px;
 }
-.panel {
-  background: var(--secondary-color);
-  padding: clamp(18px, 2.4vh, 28px);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-}
-.assistant-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-decoration: none;
-}
-.assistant-card:hover {
-  border-color: var(--button-color);
-}
-.action {
-  color: var(--button-color);
-  font-weight: 700;
-}
-label {
-  display: block;
-  font-size: 13px;
-  font-weight: bold;
-  margin: 10px 0 8px;
-}
-.input-row {
-  display: flex;
-  gap: 10px;
-}
-input,
-textarea {
+
+.search-container input {
   width: 100%;
   min-width: 0;
   background: var(--secondary-color);
@@ -119,9 +107,68 @@ textarea {
   font: inherit;
   color: var(--text-color);
 }
-textarea {
-  resize: vertical;
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
 }
+
+.section-heading h2,
+.section-heading p {
+  margin: 0;
+}
+
+/* ========================================
+   4. Recipe Grid and Cards
+======================================== */
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.recipe-card {
+  min-width: 0;
+  background: var(--secondary-color);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: clamp(100px, 16vh, 200px);
+  object-fit: cover;
+  display: block;
+}
+
+.recipe-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 8px;
+}
+
+.recipe-info h3,
+.recipe-info p {
+  margin: 0;
+}
+
+.recipe-info p {
+  font-size: 14px;
+}
+
+/* ========================================
+   5. Buttons and Favorites
+======================================== */
+
 button,
 .button {
   background: var(--button-color);
@@ -131,119 +178,113 @@ button,
   padding: 10px 18px;
   font: 600 14px/1.5 Arial;
   text-decoration: none;
+  cursor: pointer;
 }
+
 button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
-.hint {
-  font-size: 12px;
-  margin: 8px 0 0;
-}
-.section-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.section-heading h2,
-.section-heading p {
-  margin: 0;
-}
-.recipes {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-.recipe-card {
-  min-width: 0;
-  background: var(--secondary-color);
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-}
-.recipe-card img {
+
+.favorite-btn {
+  margin-top: auto;
   width: 100%;
-  height: clamp(100px, 16vh, 200px);
-  object-fit: cover;
-  display: block;
-}
-.recipe-info {
-  padding: 16px;
-}
-.recipe-info p {
-  font-size: 14px;
-}
-.recipe-info .meta {
-  color: var(--button-color);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-summary {
-  color: var(--button-color);
-  font-weight: 700;
   cursor: pointer;
 }
-details[open] summary {
-  margin-bottom: 16px;
-}
-details li {
-  margin-bottom: 10px;
-}
-details ol {
-  padding-left: 20px;
-}
-.chat-panel {
-  width: min(100%, 800px);
-  margin: 0 auto;
-}
-.badge {
-  font-size: 12px;
-  background: var(--primary-color);
-  padding: 5px 10px;
-  border-radius: 20px;
-}
-.message {
-  padding: 16px;
-  background: var(--primary-color);
-  border-radius: 12px;
-  width: fit-content;
-  max-width: 90%;
-  margin: 16px 0;
-}
-.message p {
-  margin: 5px 0 0;
-}
-.message.user {
-  margin-left: auto;
-  border: 1px solid var(--line);
+
+.favorite-btn.saved {
   background: transparent;
-}
-.about-panel {
-  width: min(100%, 760px);
-  margin: 0 auto;
-}
-.team {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 24px;
-}
-.team a {
   color: var(--button-color);
+  border: 1px solid var(--button-color);
 }
-footer {
+
+.favorites-header {
   text-align: center;
-  font-size: 12px;
-  padding: 20px 0;
+  max-width: 760px;
+  margin: 48px auto 36px;
+}
+
+.favorites-header h1 {
+  margin-bottom: 12px;
+}
+
+.favorites-header p:last-child {
   color: var(--muted);
 }
+
+.empty-favorites {
+  background: var(--secondary-color);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 48px 20px;
+  text-align: center;
+}
+
+.empty-favorites h2 {
+  margin-bottom: 12px;
+}
+
+.empty-favorites p {
+  margin-bottom: 24px;
+  color: var(--muted);
+}
+
+/* ========================================
+   6. Talk to Chef Placeholder
+======================================== */
+
+.chef-placeholder {
+  max-width: 650px;
+  margin: 60px auto;
+  padding: 48px 32px;
+  background: var(--secondary-color);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.chef-placeholder h1 {
+  font-size: 32px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.chef-placeholder p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.chef-placeholder button {
+  background: var(--button-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  margin-top: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.chef-placeholder button:hover {
+  background: #a94d28;
+}
+
+/* ========================================
+   7. Accessibility
+======================================== */
+
 :focus-visible {
   outline: 3px solid var(--button-color);
   outline-offset: 4px;
 }
+
 .skip {
   position: fixed;
   left: 20px;
@@ -252,61 +293,77 @@ footer {
   padding: 10px;
   z-index: 20;
 }
+
 .skip:focus {
   top: 10px;
 }
+
+/* ========================================
+   8. Responsive Design - Tablet
+======================================== */
+
 @media (max-width: 800px) {
   :root {
     --header-height: 110px;
   }
+
   .header {
     flex-direction: column;
     justify-content: center;
     gap: 8px;
     padding: 12px 16px;
   }
+
   .nav {
     gap: 20px;
   }
-  .kitchen-grid {
-    grid-template-columns: 1fr;
-  }
+
   .recipes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .screen {
-    justify-content: flex-start;
-    padding: 28px 0;
-  }
 }
+
+/* ========================================
+   9. Responsive Design - Mobile
+======================================== */
+
 @media (max-width: 520px) {
   main {
     width: calc(100% - 28px);
   }
+
   .nav {
     gap: 14px;
   }
-  .nav a {
+
+  .nav button {
     font-size: 12px;
   }
-  .recipes,
-  .team {
+
+  .recipes {
     grid-template-columns: 1fr;
   }
+
   .recipe-card img {
     height: 180px;
   }
+
   .section-heading {
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 8px;
   }
-}
 
-/* About belongs to Kitchen rather than a fourth screen. */
-.about-section {
-  padding: 32px 0;
-  border-top: 1px solid var(--line);
-  display: grid;
-  gap: 24px;
+  .chef-placeholder {
+    margin: 32px auto;
+    padding: 32px 20px;
+  }
+
+  .chef-placeholder h1 {
+    font-size: 26px;
+  }
+
+  .chef-placeholder p {
+    font-size: 14px;
+  }
 }
