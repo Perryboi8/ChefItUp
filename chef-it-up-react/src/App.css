@@ -1,0 +1,369 @@
+/* ========================================
+   1. Main Layout
+======================================== */
+
+main {
+  width: min(1120px, calc(100% - 40px));
+  margin: auto;
+}
+
+/* ========================================
+   2. Header and Navigation
+======================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: var(--header-height);
+  background: var(--secondary-color);
+  padding: 16px max(20px, calc((100% - 1120px) / 2));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.brand span {
+  color: var(--button-color);
+  font-style: italic;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.nav button {
+  background: transparent;
+  color: var(--text-color);
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding: 6px 0;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav button:hover,
+.nav button:focus-visible,
+.nav button.active {
+  color: var(--button-color);
+  border-bottom-color: currentColor;
+}
+
+/* ========================================
+   3. Home Page
+======================================== */
+
+.welcome {
+  text-align: center;
+  max-width: 760px;
+  margin: 48px auto 28px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  color: var(--button-color);
+  margin: 0 0 10px;
+}
+
+.welcome > p:last-child {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-container {
+  max-width: 600px;
+  margin: 0 auto 36px;
+}
+
+.search-container input {
+  width: 100%;
+  min-width: 0;
+  background: var(--secondary-color);
+  border: 1px solid #bca58f;
+  border-radius: 8px;
+  padding: 10px;
+  font: inherit;
+  color: var(--text-color);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.section-heading h2,
+.section-heading p {
+  margin: 0;
+}
+
+/* ========================================
+   4. Recipe Grid and Cards
+======================================== */
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.recipe-card {
+  min-width: 0;
+  background: var(--secondary-color);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: clamp(100px, 16vh, 200px);
+  object-fit: cover;
+  display: block;
+}
+
+.recipe-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 8px;
+}
+
+.recipe-info h3,
+.recipe-info p {
+  margin: 0;
+}
+
+.recipe-info p {
+  font-size: 14px;
+}
+
+/* ========================================
+   5. Buttons and Favorites
+======================================== */
+
+button,
+.button {
+  background: var(--button-color);
+  color: var(--secondary-color);
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font: 600 14px/1.5 Arial;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.favorite-btn {
+  margin-top: auto;
+  width: 100%;
+  cursor: pointer;
+}
+
+.favorite-btn.saved {
+  background: transparent;
+  color: var(--button-color);
+  border: 1px solid var(--button-color);
+}
+
+.favorites-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 48px auto 36px;
+}
+
+.favorites-header h1 {
+  margin-bottom: 12px;
+}
+
+.favorites-header p:last-child {
+  color: var(--muted);
+}
+
+.empty-favorites {
+  background: var(--secondary-color);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 48px 20px;
+  text-align: center;
+}
+
+.empty-favorites h2 {
+  margin-bottom: 12px;
+}
+
+.empty-favorites p {
+  margin-bottom: 24px;
+  color: var(--muted);
+}
+
+/* ========================================
+   6. Talk to Chef Placeholder
+======================================== */
+
+.chef-placeholder {
+  max-width: 650px;
+  margin: 60px auto;
+  padding: 48px 32px;
+  background: var(--secondary-color);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.chef-placeholder h1 {
+  font-size: 32px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.chef-placeholder p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.chef-placeholder button {
+  background: var(--button-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  margin-top: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.chef-placeholder button:hover {
+  background: #a94d28;
+}
+
+/* ========================================
+   7. Accessibility
+======================================== */
+
+:focus-visible {
+  outline: 3px solid var(--button-color);
+  outline-offset: 4px;
+}
+
+.skip {
+  position: fixed;
+  left: 20px;
+  top: -100px;
+  background: var(--secondary-color);
+  padding: 10px;
+  z-index: 20;
+}
+
+.skip:focus {
+  top: 10px;
+}
+
+/* ========================================
+   8. Responsive Design - Tablet
+======================================== */
+
+@media (max-width: 800px) {
+  :root {
+    --header-height: 110px;
+  }
+
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .recipes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ========================================
+   9. Responsive Design - Mobile
+======================================== */
+
+@media (max-width: 520px) {
+  main {
+    width: calc(100% - 28px);
+  }
+
+  .nav {
+    gap: 14px;
+  }
+
+  .nav button {
+    font-size: 12px;
+  }
+
+  .recipes {
+    grid-template-columns: 1fr;
+  }
+
+  .recipe-card img {
+    height: 180px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .chef-placeholder {
+    margin: 32px auto;
+    padding: 32px 20px;
+  }
+
+  .chef-placeholder h1 {
+    font-size: 26px;
+  }
+
+  .chef-placeholder p {
+    font-size: 14px;
+  }
+}
