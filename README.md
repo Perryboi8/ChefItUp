@@ -1,7 +1,8 @@
 # ChefItUp
+
 Web Application to help users figure out what they are able to cook based on their ingredients they currently have in the fridge. You will be able to ask our AI Chef for ideas on what to cook and even specify what type of cuisine you are craving. The goal is to help users who have trouble finding recipes that they are able to cook now.
 
-## Combined screens
+## Milestone 1
 
 Open `index.html` in your browser. This prototype uses HTML and CSS only.
 
@@ -14,3 +15,19 @@ Each page repeats the same small header and navigation. Navigation opens the
 corresponding HTML file; no server, imports, build tools, or JavaScript are needed.
 Recipe instructions expand with native HTML details elements. Ingredient entry,
 chat, and saving favorites remain visual previews.
+
+## Milestone 2
+
+React application featuring:
+
+- Recipe search by name and ingredients
+- Favorites management
+- localStorage persistence
+- Responsive layout
+- Talk to Chef (planned AI feature)
+
+## Running the React Application
+
+cd chef-it-up-react
+npm install
+npm run dev
