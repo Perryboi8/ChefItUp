@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import RecipeCard from "./components/RecipeCard";
+import Teams from "./components/Teams";
 import recipes from "./data/recipes";
 import { useState, useEffect } from "react";
 
@@ -22,6 +23,10 @@ function App() {
     }
     return [];
   });
+
+  const favoriteRecipes = recipes.filter((recipe) =>
+    favorites.some((favorite) => favorite.id === recipe.id),
+  );
   const [currentPage, setCurrentPage] = useState("home");
 
   useEffect(() => {
@@ -90,6 +95,7 @@ function App() {
                 />
               ))}
             </div>
+            <Teams />
           </>
         ) : currentPage === "favorites" ? (
           <>
@@ -113,7 +119,7 @@ function App() {
               </div>
             ) : (
               <div className="recipes">
-                {favorites.map((recipe) => (
+                {favoriteRecipes.map((recipe) => (
                   <RecipeCard
                     key={recipe.id}
                     recipe={recipe}

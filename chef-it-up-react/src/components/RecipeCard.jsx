@@ -6,6 +6,24 @@ function RecipeCard({ recipe, onToggleFavorite, isFavorite }) {
         <h3>{recipe.name}</h3>
         <p>{recipe.description}</p>
 
+        <details className="recipe-details">
+          <summary>View Recipe</summary>
+          <h4>Ingredients</h4>
+          <ul>
+            {recipe.ingredients.map((ingredient) => (
+              <li key={ingredient}>
+                {ingredient.charAt(0).toUpperCase() + ingredient.slice(1)}
+              </li>
+            ))}
+          </ul>
+          <h4>Instructions</h4>
+          <ol>
+            {recipe.instructions.map((step, index) => (
+              <li key={index}>{step}</li>
+            ))}
+          </ol>
+        </details>
+
         <button
           type="button"
           className={isFavorite ? "favorite-btn saved" : "favorite-btn"}

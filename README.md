@@ -2,43 +2,42 @@
 
 Chef it up! is a recipe discovery web application designed to help users find meals based on ingredients they already have at home.
 
-The goal is to simplify meal planning, reduce food waste, and help users discover recipes without having to search through multiple websites.
+The original vision includes an AI-powered cooking assistant called **Talk to Chef**, where users could describe the ingredients available in their refrigerator, specify their preferred cuisine, and receive personalized meal recommendations.
 
-The original vision also includes an AI-powered cooking assistant called **Talk to Chef**, which would allow users to request personalized recipe recommendations, specify their preferred cuisine, and ask cooking-related questions. This feature is currently planned for future development.
+The current version implements recipe browsing, ingredient-based search, cooking instructions, and persistent favorites. AI-powered recommendations remain a planned enhancement.
 
-## Milestone 1 — HTML & CSS Prototype
+## Milestone 1 — HTML & CSS
 
-The first milestone focused on designing and building the application's user interface using HTML and CSS.
+The initial milestone focused on building a static prototype of the application.
 
-### Features
+Features included:
 
-- Home page with sample recipes and expandable recipe instructions.
-- Talk to Chef conversation preview.
+- Home page featuring sample recipes.
+- Expandable recipe instructions.
 - Favorites page with sample recipes.
-- About section introducing the development team.
-- Responsive layout using CSS.
+- Talk to Chef conversation preview.
+- Meet the Team section.
+- Responsive styling.
 
-The original prototype contains visual demonstrations only. Searching, AI chat, and saving favorites were not functional at this stage.
+The static prototype is preserved in the `milestone-1-static/` directory.
 
-### Running Milestone 1
-
-Open `milestone-1-static/index.html` in a web browser.
-
-No server or additional dependencies are required.
+To view the original prototype, open `milestone-1-static/index.html` in a browser.
 
 ## Milestone 2 — React Application
 
-The second milestone focused on migrating the application to React and implementing interactive functionality.
+The application was migrated to React to introduce interactive functionality.
 
-### Implemented Features
+### Features
 
-- **Recipe Search:** Search recipes by name or ingredients.
-- **Recipe Cards:** Dynamically display recipes using reusable React components.
-- **Favorites Management:** Add and remove recipes from a personal favorites collection.
-- **Persistent Favorites:** Save favorites using browser `localStorage`, allowing them to remain available after refreshing.
-- **Navigation:** Switch between Home, Favorites, and Talk to Chef using React state.
-- **Responsive Design:** Adjust the interface for desktop, tablet, and mobile screens.
-- **Talk to Chef:** Placeholder page for a planned AI cooking assistant.
+- **Recipe Library:** Nine recipes featuring images, ingredients, descriptions, and cooking instructions.
+- **Recipe Search:** Filter recipes by name or individual ingredients.
+- **Recipe Instructions:** Expand recipe cards to view ingredient lists and preparation steps.
+- **Favorites:** Add or remove recipes from a saved collection.
+- **Persistent Favorites:** Save favorite recipes using browser `localStorage`.
+- **Navigation:** Switch between Home, Favorites, and Talk to Chef.
+- **Meet the Team:** Information about the original project creators.
+- **Responsive Design:** Layouts for desktop, tablet, and mobile devices.
+- **Talk to Chef:** Placeholder for future AI integration.
 
 ### Technologies Used
 
@@ -50,13 +49,15 @@ The second milestone focused on migrating the application to React and implement
 - Browser Local Storage
 - Git and GitHub
 
-### Running Milestone 2
+## Getting Started
 
-**Prerequisites:**
+### Prerequisites
 
-- Node.js and npm installed.
+Install Node.js and npm.
 
-Navigate to the React application directory:
+### Installation
+
+Navigate to the React project directory:
 
 ```bash
 cd chef-it-up-react
@@ -76,29 +77,34 @@ npm run dev
 
 Open the local URL displayed in the terminal.
 
-### Testing and Building
+## Testing and Production Build
 
-Run ESLint:
+Run ESLint to check for code-quality issues:
 
 ```bash
 npm run lint
 ```
 
-Create a production build:
+Build the application for production:
 
 ```bash
 npm run build
 ```
 
+The generated production files will be located in the `dist/` directory.
+
 ## Future Improvements
 
 Potential enhancements include:
 
-- Integrating an AI-powered cooking assistant.
-- Providing complete cooking instructions for every recipe.
-- Supporting more recipes and additional filtering options.
-- Connecting the application to a recipe API or backend database.
+- Integrating a functional AI-powered Talk to Chef assistant.
+- Allowing users to describe multiple available ingredients in natural language.
+- Recommending recipes based on ingredient availability, cuisine preferences, and missing ingredients.
+- Connecting to an external recipe API or database.
+- Expanding the recipe library.
 
-## Project Information
+## Project Status
 
-Developed for **CPSC 349 — Front-End Engineering** at California State University, Fullerton.
+The React application implements the core recipe browsing, search, instructions, and favorites functionality.
+
+Talk to Chef currently demonstrates the planned AI feature through a placeholder interface. It does not generate AI responses.
